@@ -1,0 +1,17 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Api para listar alguns produtos.",
+  "main": "index.js",
+  "author": "Felipe Silva <felipe_96sp@msn.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
