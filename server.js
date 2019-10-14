@@ -4,6 +4,7 @@ const routes = require('./src/routes');
 
 // Iniciando o App
 const app = express();
+app.use(express.json())
 
 // Iniciando o DB
 mongoose.connect(
