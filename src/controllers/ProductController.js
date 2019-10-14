@@ -12,9 +12,20 @@ module.exports = {
 
     return res.json(product);
   },
+
   async store(req, res) {
     const product = await Product.create(req.body);
 
     return res.json(product);
+  },
+
+  async update(req, res) {
+    const product = await Product.findOneAndUpdate(req.params.id, req.body, {
+      new: true,
+      useFindAndModify: false
+    });
+
+    return res.json(product);
+  },
   }
 };
