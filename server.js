@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./src/routes');
 
 // Iniciando o App
 const app = express();
@@ -10,17 +11,6 @@ mongoose.connect(
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
-require('./src/models/Product');
-
-const Product = mongoose.model('Product');
-
-app.get('/', (req, res) => {
-  Product.create({
-    title: 'React Native',
-    description: 'Build native apps with React',
-    url: 'http://github.com/facebook/react-native'
-  });
-  res.send('Hello World');
-});
+app.use('/api', routes);
 
 app.listen(3000);

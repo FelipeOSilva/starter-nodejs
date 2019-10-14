@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require('mongoose');
 
-const ProductSchema = new mongoose.Schema(
+const ProductSchema = new Schema(
   {
     title: {
       type: String,
@@ -20,4 +20,4 @@ const ProductSchema = new mongoose.Schema(
   }
 );
 
-mongoose.model('Product', ProductSchema);
+module.exports = model('Product', ProductSchema);
