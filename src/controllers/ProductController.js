@@ -23,7 +23,7 @@ module.exports = {
   },
 
   async update(req, res) {
-    const product = await Product.findOneAndUpdate(req.params.id, req.body, {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       useFindAndModify: false
     });
@@ -32,7 +32,7 @@ module.exports = {
   },
 
   async destroy(req, res) {
-    await Product.findOneAndDelete(req.params.id);
+    await Product.findByIdAndRemove(req.params.id);
 
     res.send();
   }
